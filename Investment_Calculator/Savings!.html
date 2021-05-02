@@ -1,0 +1,42 @@
+<html style="background-color: #fff8dcb5;" lang="en">
+<head>
+  <title>Savings! By: Mr. Jackson</title>
+  <script>
+function calculate() {
+  var amount = parseInt(document.getElementById("amount").value);
+  var taux = parseFloat(document.getElementById("rate").value);
+  var ans = parseFloat(document.getElementById("years").value);
+  var leTotal = 0;
+  for(var numéroCompte = 0; numéroCompte < ans; numéroCompte++) {
+    leTotal = leTotal * (1 + taux / 100) + montant * 12;
+  }
+  document.getElementById("output").innerHTML =
+  "Après " + ans + " ans, tu auras environ " + Math.round(leTotal) + " enregistré! (euro/€)!";
+}
+  </script>
+</head>
+<body style="margin-top: 90; margin-left: 8; background-color: #ffa50059;
+margin-bottom: 290;
+">
+  <h1><font face="Quicksand" color="teal">Des économies! Par: Professeur Jackson</h1>
+  <form>
+    <table>
+      <tr>
+        <td>Montant des économies mensuelles ici (Euro):</td>
+        <td><input type="text" id="amount"></td>
+      </tr>
+      <tr>
+        <td>Votre taux d'intérêt annuel ici (%):</td>
+        <td><input type="text" id="rate"> </td></tr>
+      <tr>
+        <td>Le nombre d'années que vous économiserez ici (calendrier Grégorien):</td>
+        <td><input type="text" id="years"> </td></tr>
+    </table>
+  </form>
+  <button type="button" style="margin-left: 100;margin-top: 50;"
+   onclick="calculate()">
+    - - Cliquez ici pour calculer votre épargne - - </button>
+  <h3 id="output" style="margin-top: 25;margin-left: 15;">
+      Le montant des économies sera affiché ici</h3>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html style="background-color: black;">
+<body><title>Draw Circles! By: Mr. Jackson</title>
+  <h1 style="padding-left: 20;"><font color="teal" style="font-family: Quicksand;">Draw Circles! By: Mr. Jackson</font></h1>
+  <canvas id="circles" width="750" height="500" onclick="drawC(event)" onmousemove="drawC(event)"> </canvas>
+  <script>
+function clearCanvas() {
+
+}
+function randomColor(){
+  var r = Math.floor(Math.random() * 240 + 16);
+  var g = Math.floor(Math.random() * 240 + 16);
+  var b = Math.floor(Math.random() * 240 + 16);
+  var color = "#" + r.toString(16) + g.toString(16) + b.toString(16);
+  return color;
+}
+
+function drawC(evt){
+  var canvas = document.getElementById("circles");
+  var ctx = canvas.getContext("2d");
+  var rect = canvas.getBoundingClientRect();
+  var xpos = evt.clientX - rect.left;
+  var ypos = evt.clientY - rect.top;
+  ctx.fillStyle = randomColor() + "59";
+  ctx.beginPath();
+  ctx.arc(xpos, ypos, 50, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = "#ffffff65";
+  ctx.beginPath();
+  ctx.arc(xpos, ypos, 50, 0, Math.PI * 2);
+  ctx.stroke();
+
+}
+  </script>
+  <button style="font-family: Quicksand; color: teal; margin-left: 375;"
+  onclick="ctx.clearRect(0, 0, canvas.width, canvas.height);">
+    Clear canvas</button>
+  </body>
+</html>

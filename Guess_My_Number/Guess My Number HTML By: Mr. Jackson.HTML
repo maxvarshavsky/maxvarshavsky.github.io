@@ -1,0 +1,76 @@
+<html style="
+    background-color: #a5a5b1;
+    padding: 50;
+    border: teal;
+    border-bottom: teal;
+"><head><title>Guess My Number HTML By: Mr. Jackson</title>
+<script>
+var randomNumber = Math.floor(Math.random()* 100 + 1);
+yourGuess = document.getElementById("guess");
+
+var triesYouDid = 0;
+
+function againPlease() {
+  randomNumber = Math.floor(Math.random()* 100 + 1)
+  document.getElementById("guess").focus();
+  document.getElementById("guess").select();
+  setTimeout(triesYouDid = 0,2000);
+}
+function loading() {
+  yourGuess = document.getElementById("guess").value;
+  var heresYourMsg = "";
+  ++triesYouDid;
+if (yourGuess > randomNumber)
+  heresYourMsg = yourGuess + " was too high 😢, please try again.";
+else if   (yourGuess < randomNumber)
+  heresYourMsg = yourGuess + " was too low 😢, please try again.";
+else  {
+  heresYourMsg = yourGuess + " was my number! You got my number in " + triesYouDid + " tries! PARTY ALL NIGHT!!! 🥳🥳🥳";
+  heresYourMsg = heresYourMsg + " (Or, you can try again…)";
+  againPlease();
+}
+
+var scoreJsAndCSS =
+score.innerHTML =
+  "You guessed " + yourGuess + " on try " + triesYouDid + ". <br>" +
+score.innerHTML;
+
+var showIdOutput = document.getElementById("output");
+showIdOutput.innerHTML = heresYourMsg;
+document.getElementById("guess").focus();
+document.getElementById("guess").select();
+};
+</script>
+</head>
+<body onload="againPlease()" style="
+    width: 715;
+">
+<h1><font face="Quicksand" color="teal" style="
+    background-color: #e2d6d6d1;
+">Guess My Number HTML! By: Mr. Jackson</font></h1>
+<h6><font face="Quicksand" color="teal" style="
+    background-color: #e2d6d6d1;
+">
+  <a href="https://fonts.google.com/specimen/Quicksand?query=Quick">
+     (If you want to, you can download this font here)</a></font></h6>
+<h3><font face="Quicksand" color="teal" style="
+    background-color: #e0d3d3;
+">Today, you are going to guess my number here!</font></h3>
+<h6 style="
+"><font face="Quicksand" color="teal" style="
+    background-color: #e2d6d6d1;
+">(This html page only works on computer)</font></h6>
+<form onsubmit="loading(); return false;">
+  <font face="Quicksand" color="teal" style="background-color: #e2d6d6d1;">
+Enter a number between 1 and 100:
+  <input type="text" id="guess" size="6">
+  <button type="button" onclick="loading()"><font face="Quicksand">Guess!</font></button>
+  </font>
+</form>
+<h3 id="score"></h3>
+  <h2 id="output"><font face="Quicksand" color="teal" style="
+    background-color: #e2d6d6d1;
+">Try and guess my number and then press the "Guess!" button!</font></h2>
+<img src="Guess!!.jpg" style="width: 450;height: 485;padding: 48;padding-top: 0;padding-bottom: 0;" />
+<h6><font color="teal" face="Quicksand">(not the company)</font></h6>
+</body></html>

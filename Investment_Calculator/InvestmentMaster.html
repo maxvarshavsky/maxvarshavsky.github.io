@@ -1,0 +1,77 @@
+<html style="background-color: #fff8dcb5;" lang="en">
+<head>
+  <title>Savings & Investment! By: Mr. Jackson</title>
+  <script>
+function calculate() {
+  var amount = parseInt(document.getElementById("amount").value);
+  var rate = parseFloat(document.getElementById("rate").value);
+  var years = parseFloat(document.getElementById("years").value);
+  var total = 0;
+  var totals = [ ];
+  for(var numberCounting = 0; numberCounting < years; numberCounting++) {
+    total = total * (1 + rate / 100) + amount * 12;
+    totals.push(Math.round(total));
+  }
+  document.getElementById("output").innerHTML =
+  "After " + years + " years, you'll have " + Math.round(total) + " saved! (USD/$)!";
+  drawGraph(totals);
+
+}
+
+function drawGraph(arr) {
+  var canvas = document.getElementById("graph")
+  var ctx = canvas.getContext("2d");
+  var l = arr.length;
+  var w = canvas.width;
+  var h = canvas.height;
+  ctx.clearRect(0, 0, w, h);
+  var barW =  w / l;
+  var maxVal = arr[arr.length - 1];
+  for(var n = 0; n < arr.length; n++) {
+    var top = h - (h * arr[n] / maxVal);
+    var left = n * barW;
+    ctx.fillStyle = "#00fa9a";
+    ctx.fillRect(left, top, barW, h);
+    ctx.strokeStyle = "#000000";
+    ctx.strokeRect(left, top, barW, h);
+    ctx.font = "9px Quicksand";
+    ctx.fillStyle = "#000000";
+    ctx.textAlign = "left";
+    ctx.textBaseLine = "bottom";
+
+    if (n == Math.floor(l / 4) )
+      ctx.fillText(arr[n] + " at " + n + " years", left - 3, top - 20);
+    if (n == Math.floor(l / 2) )
+      ctx.fillText(arr[n] + " at " + n + " years", left - 40, top - 20);
+    if (n == Math.floor(3 * l / 4) )
+      ctx.fillText(arr[n] + " at " + n + "years", left - 70, top - 20);
+  }
+}
+  </script>
+</head>
+<body style="margin-top: 90; margin-left: 8; background-color: #ffa50059;
+margin-bottom: 290;
+">
+  <h1><font face="Quicksand" color="teal">Savings & Investment! By: Mr. Jackson</h1>
+  <form>
+    <table>
+      <tr>
+        <td>Monthly savings amount here (USD):</td>
+        <td><input type="text" id="amount"></td>
+      </tr>
+      <tr>
+        <td>Your annual interest rate here (%):</td>
+        <td><input type="text" id="rate"> </td></tr>
+      <tr>
+        <td>The number of years you'll save here (Gregorian calendar):</td>
+        <td><input type="text" id="years"> </td></tr>
+    </table>
+  </form>
+  <button type="button" style="margin-left: 100;margin-top: 50;"
+   onclick="calculate()" onclick="txt()">
+    - - Click here to calculate your savings - - </button>
+  <h3 id="output" style="margin-top: 25;margin-left: 15;">
+      The amount of savings and investment will be displayed here</h3>
+  <canvas id ="graph" width="500" height="300"> </canvas>
+</body>
+</html>
