@@ -13,8 +13,6 @@ function randomColor(){
   var color = "#" + r.toString(16) + g.toString(16) + b.toString(16);
   return color;
 }
-var radius = 20;
-var grow = true;
 
 function drawC(evt){
   var canvas = document.getElementById("circles");
@@ -22,21 +20,13 @@ function drawC(evt){
   var rect = canvas.getBoundingClientRect();
   var xpos = evt.clientX - rect.left;
   var ypos = evt.clientY - rect.top;
-
-  if (grow)
-    radius++;
-  else {
-    radius--;
-  }
-  if (radius > 60 || radius < 20)
-    grow = !grow;
   ctx.fillStyle = randomColor() + "59";
   ctx.beginPath();
-  ctx.arc(xpos, ypos, radius, 0, Math.PI * 2);
+  ctx.arc(xpos, ypos, 50, 0, Math.PI * 2);
   ctx.fill();
   ctx.strokeStyle = "#ffffff65";
   ctx.beginPath();
-  ctx.arc(xpos, ypos, radius, 0, Math.PI * 2);
+  ctx.arc(xpos, ypos, 50, 0, Math.PI * 2);
   ctx.stroke();
 
 }
