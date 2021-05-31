@@ -50,5 +50,5 @@ class PlayerCircle extends GameObject {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.width, 0, 2 * Math.PI);
     ctx.fill();
-  }
-}
+  };
+};
