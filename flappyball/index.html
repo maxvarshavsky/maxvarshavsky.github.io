@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Square</title>
+    <style>
+      #wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #canvas {
+        width: 1000px;
+        height: 500px;
+        display: inline-flex;
+        background: white;;
+      }
+    </style>
+</head>
+<body>
+  <div id="wrapper">
+    <canvas width="1000" height="500" id="canvas"></canvas>
+  </div>
+  <script src="js/01_utils.js"></script>
+  <script src="js/02_GameObject.js"></script>
+  <script src="js/03_PlayerCircle.js"></script>
+  <script src="js/04_Obstacle.js"></script>
+  <script src="js/05_Game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
