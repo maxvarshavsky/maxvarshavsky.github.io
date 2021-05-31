@@ -8,10 +8,6 @@ class Game {
   keepRendering = false;
   time = 0;
 
-  let lev = 0;
-  lev++;
-  console.log(lev);
-
   newObstacleTimeout = null;
   player = null;
 
