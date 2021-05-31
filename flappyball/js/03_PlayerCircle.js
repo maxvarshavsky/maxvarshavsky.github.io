@@ -30,25 +30,24 @@ class PlayerCircle extends GameObject {
     if(secs == 60) {
       ++mins
       secs = 0
-    };
+    }
     if (mins == 2) {
       ++lev
       mins = 0
       secs = 0
-    };
+    }
   }
-  if (lev = 1) {
+  
     this.y += this.fallSpeed;
     const {ctx, height} = this.game;
-  };
 
     if (this.y >= height || this.y <= 0) {
       this.game.over();
       return;
-    };
+    }
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.width, 0, 2 * Math.PI);
     ctx.fill();
-  };
-};
+  }
+}
