@@ -10,7 +10,7 @@ class Game {
 
   let lev = 0;
   lev++;
-  document.log(lev);
+  console.log(lev);
 
   newObstacleTimeout = null;
   player = null;
