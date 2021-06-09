@@ -1,1 +1,1 @@
-document.write('<center><p> - - Max's website - - </p></center>')
+document.write('<center><p> - - Max Website - - </p></center>')
