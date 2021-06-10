@@ -1,1 +1,1 @@
-document.write('<center><p><font color="White"> - - Max Website - - </font></p></center>')
+document.write('<center><p> - - Max Website - - </p></center>')
